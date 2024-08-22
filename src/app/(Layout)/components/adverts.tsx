@@ -32,40 +32,42 @@ export const Adverts = () => {
 
     return "hidden";
   };
-  console.log(position);
-  return (
-    <section className="w-full relative h-20 sm:h-24 md:h-32 lg:h-60 xl:h-72 2xl:h-80 flex overflow-hidden">
-      {/*Anuncios*/}
-      {adverts.map((item, index) => (
-        <Image
-          key={item}
-          src={item}
-          fill
-          alt="anuncios"
-          className={`absolute transition-transform duration-700 ${direction(
-            index
-          )}`}
-        />
-      ))}
 
-      <div className="flex justify-between absolute w-full px-6 top-5 md:top-12 lg:top-24 xl:top-32 2xl:top-36">
-        <button onClick={prevAdverts}>
-          <CircleArrowLeft
-            size={32}
-            color="#0a0a0a"
-            strokeWidth={1}
-            className="fill-white opacity-75 hover:opacity-100 "
+  return (
+    <div className="w-full pt-16">
+      <section className="w-full relative h-20 sm:h-24 md:h-32 lg:h-60 xl:h-72 2xl:h-80 flex overflow-hidden">
+        {/*Anuncios*/}
+        {adverts.map((item, index) => (
+          <Image
+            key={item}
+            src={item}
+            fill
+            alt="anuncios"
+            className={`absolute transition-transform duration-700 ${direction(
+              index
+            )}`}
           />
-        </button>
-        <button onClick={nextAdverts}>
-          <CircleArrowRight
-            size={32}
-            color="#0a0a0a"
-            strokeWidth={1}
-            className="fill-white opacity-75 hover:opacity-100"
-          />
-        </button>
-      </div>
-    </section>
+        ))}
+
+        <div className="flex justify-between absolute w-full px-6 top-5 md:top-12 lg:top-24 xl:top-32 2xl:top-36">
+          <button onClick={prevAdverts}>
+            <CircleArrowLeft
+              size={32}
+              color="#0a0a0a"
+              strokeWidth={1}
+              className="fill-white opacity-75 hover:opacity-100 "
+            />
+          </button>
+          <button onClick={nextAdverts}>
+            <CircleArrowRight
+              size={32}
+              color="#0a0a0a"
+              strokeWidth={1}
+              className="fill-white opacity-75 hover:opacity-100"
+            />
+          </button>
+        </div>
+      </section>
+    </div>
   );
 };
